@@ -1,5 +1,10 @@
 # Agent Pipeline
 
+[![VS Marketplace](https://img.shields.io/visual-studio-marketplace/v/cmkurtulus.agent-pipeline?label=VS%20Marketplace&color=blue)](https://marketplace.visualstudio.com/items?itemName=cmkurtulus.agent-pipeline)
+[![Installs](https://img.shields.io/visual-studio-marketplace/i/cmkurtulus.agent-pipeline)](https://marketplace.visualstudio.com/items?itemName=cmkurtulus.agent-pipeline)
+
+**[Install from VS Marketplace](https://marketplace.visualstudio.com/items?itemName=cmkurtulus.agent-pipeline)**
+
 Multi-agent pipeline orchestrator for Cursor IDE. Automates the software development workflow through 4 specialized AI agents: **Planner**, **Implementer**, **Reviewer**, and **Tester**.
 
 Each agent has a specific role, receives auto-generated context-rich prompts, and passes its output to the next agent in the chain — creating a structured, reviewable development process.
