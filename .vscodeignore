@@ -1,0 +1,12 @@
+.vscode/**
+.vscode-test/**
+src/**
+node_modules/**
+.cursor/**
+.gitignore
+.agent_pipeline/**
+webpack.config.js
+webpack.mcp.config.js
+tsconfig.json
+**/*.map
+**/*.d.ts

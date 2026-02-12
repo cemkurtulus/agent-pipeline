@@ -1,0 +1,327 @@
+{
+  "name": "agent-pipeline",
+  "displayName": "Agent Pipeline",
+  "description": "Multi-agent pipeline orchestrator for Cursor IDE - automates planning, implementation, review, and testing workflows",
+  "version": "0.0.1",
+  "publisher": "cmkurtulus",
+  "icon": "resources/icon.png",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/agent-ck/agent-pipeline"
+  },
+  "keywords": [
+    "cursor",
+    "agent",
+    "pipeline",
+    "ai",
+    "mcp",
+    "planner",
+    "code-review",
+    "testing"
+  ],
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onView:agentPipelineSidebar"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "agentPipeline",
+          "title": "Agent Pipeline",
+          "icon": "resources/icons/pipeline.svg"
+        }
+      ]
+    },
+    "views": {
+      "agentPipeline": [
+        {
+          "type": "webview",
+          "id": "agentPipelineSidebar",
+          "name": "Pipeline",
+          "icon": "resources/icons/pipeline.svg"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Agent Pipeline",
+      "properties": {
+        "agentPipeline.models.planner": {
+          "type": "string",
+          "default": "claude-4.5-sonnet",
+          "description": "AI model to use for the Planner agent",
+          "enum": [
+            "claude-4.6-opus",
+            "claude-4.5-sonnet",
+            "composer-1.5",
+            "gemini-3-pro",
+            "gemini-3-flash",
+            "gpt-5.3-codex",
+            "gpt-5.2",
+            "grok-code",
+            "claude-3.5-sonnet",
+            "claude-3-opus",
+            "claude-3-haiku",
+            "gpt-4o",
+            "gpt-4o-mini",
+            "gpt-4-turbo",
+            "gpt-4",
+            "gemini-1.5-pro",
+            "gemini-1.5-flash",
+            "deepseek-v3",
+            "deepseek-r1",
+            "o1-mini",
+            "o1-preview"
+          ],
+          "enumDescriptions": [
+            "Claude 4.6 Opus - Anthropic's most capable model (200k/1M context)",
+            "Claude 4.5 Sonnet - Fast & capable, great all-rounder (200k/1M context)",
+            "Composer 1.5 - Cursor's built-in model (200k context)",
+            "Gemini 3 Pro - Google's most capable model (200k/1M context)",
+            "Gemini 3 Flash - Fast Google model (200k/1M context)",
+            "GPT-5.3 Codex - OpenAI's latest coding model (272k context)",
+            "GPT-5.2 - OpenAI flagship model (272k context)",
+            "Grok Code - xAI coding model (256k context)",
+            "Claude 3.5 Sonnet - Previous gen Anthropic (BYOK)",
+            "Claude 3 Opus - Previous gen Anthropic (BYOK)",
+            "Claude 3 Haiku - Previous gen fast Anthropic (BYOK)",
+            "GPT-4o - Previous gen OpenAI (BYOK)",
+            "GPT-4o Mini - Previous gen lightweight OpenAI (BYOK)",
+            "GPT-4 Turbo - Previous gen OpenAI (BYOK)",
+            "GPT-4 - Previous gen OpenAI (BYOK)",
+            "Gemini 1.5 Pro - Previous gen Google (BYOK)",
+            "Gemini 1.5 Flash - Previous gen Google (BYOK)",
+            "DeepSeek V3 - Open-source model (BYOK)",
+            "DeepSeek R1 - Open-source reasoning model (BYOK)",
+            "o1-mini - OpenAI reasoning mini (BYOK)",
+            "o1-preview - OpenAI reasoning (BYOK)"
+          ]
+        },
+        "agentPipeline.models.implementer": {
+          "type": "string",
+          "default": "claude-4.6-opus",
+          "description": "AI model to use for the Implementer agent",
+          "enum": [
+            "claude-4.6-opus",
+            "claude-4.5-sonnet",
+            "composer-1.5",
+            "gemini-3-pro",
+            "gemini-3-flash",
+            "gpt-5.3-codex",
+            "gpt-5.2",
+            "grok-code",
+            "claude-3.5-sonnet",
+            "claude-3-opus",
+            "claude-3-haiku",
+            "gpt-4o",
+            "gpt-4o-mini",
+            "gpt-4-turbo",
+            "gpt-4",
+            "gemini-1.5-pro",
+            "gemini-1.5-flash",
+            "deepseek-v3",
+            "deepseek-r1",
+            "o1-mini",
+            "o1-preview"
+          ],
+          "enumDescriptions": [
+            "Claude 4.6 Opus - Most capable, recommended for implementation (200k/1M)",
+            "Claude 4.5 Sonnet - Fast & capable (200k/1M context)",
+            "Composer 1.5 - Cursor's built-in model (200k context)",
+            "Gemini 3 Pro - Google's most capable (200k/1M context)",
+            "Gemini 3 Flash - Fast Google model (200k/1M context)",
+            "GPT-5.3 Codex - OpenAI coding model (272k context)",
+            "GPT-5.2 - OpenAI flagship (272k context)",
+            "Grok Code - xAI coding model (256k context)",
+            "Claude 3.5 Sonnet - Previous gen (BYOK)",
+            "Claude 3 Opus - Previous gen (BYOK)",
+            "Claude 3 Haiku - Previous gen (BYOK)",
+            "GPT-4o - Previous gen (BYOK)",
+            "GPT-4o Mini - Previous gen (BYOK)",
+            "GPT-4 Turbo - Previous gen (BYOK)",
+            "GPT-4 - Previous gen (BYOK)",
+            "Gemini 1.5 Pro - Previous gen (BYOK)",
+            "Gemini 1.5 Flash - Previous gen (BYOK)",
+            "DeepSeek V3 - Open-source (BYOK)",
+            "DeepSeek R1 - Open-source reasoning (BYOK)",
+            "o1-mini - OpenAI reasoning mini (BYOK)",
+            "o1-preview - OpenAI reasoning (BYOK)"
+          ]
+        },
+        "agentPipeline.models.reviewer": {
+          "type": "string",
+          "default": "gpt-5.2",
+          "description": "AI model to use for the Reviewer agent",
+          "enum": [
+            "claude-4.6-opus",
+            "claude-4.5-sonnet",
+            "composer-1.5",
+            "gemini-3-pro",
+            "gemini-3-flash",
+            "gpt-5.3-codex",
+            "gpt-5.2",
+            "grok-code",
+            "claude-3.5-sonnet",
+            "claude-3-opus",
+            "claude-3-haiku",
+            "gpt-4o",
+            "gpt-4o-mini",
+            "gpt-4-turbo",
+            "gpt-4",
+            "gemini-1.5-pro",
+            "gemini-1.5-flash",
+            "deepseek-v3",
+            "deepseek-r1",
+            "o1-mini",
+            "o1-preview"
+          ],
+          "enumDescriptions": [
+            "Claude 4.6 Opus - Anthropic's most capable (200k/1M context)",
+            "Claude 4.5 Sonnet - Fast & capable (200k/1M context)",
+            "Composer 1.5 - Cursor's built-in model (200k context)",
+            "Gemini 3 Pro - Google's most capable (200k/1M context)",
+            "Gemini 3 Flash - Fast Google model (200k/1M context)",
+            "GPT-5.3 Codex - OpenAI coding model (272k context)",
+            "GPT-5.2 - OpenAI flagship, recommended for review (272k context)",
+            "Grok Code - xAI coding model (256k context)",
+            "Claude 3.5 Sonnet - Previous gen (BYOK)",
+            "Claude 3 Opus - Previous gen (BYOK)",
+            "Claude 3 Haiku - Previous gen (BYOK)",
+            "GPT-4o - Previous gen (BYOK)",
+            "GPT-4o Mini - Previous gen (BYOK)",
+            "GPT-4 Turbo - Previous gen (BYOK)",
+            "GPT-4 - Previous gen (BYOK)",
+            "Gemini 1.5 Pro - Previous gen (BYOK)",
+            "Gemini 1.5 Flash - Previous gen (BYOK)",
+            "DeepSeek V3 - Open-source (BYOK)",
+            "DeepSeek R1 - Open-source reasoning (BYOK)",
+            "o1-mini - OpenAI reasoning mini (BYOK)",
+            "o1-preview - OpenAI reasoning (BYOK)"
+          ]
+        },
+        "agentPipeline.autoComplete.enabled": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically complete the active agent phase when files are saved and no further activity is detected"
+        },
+        "agentPipeline.autoComplete.debounceSeconds": {
+          "type": "number",
+          "default": 5,
+          "minimum": 2,
+          "maximum": 30,
+          "description": "Seconds to wait after the last file save before auto-completing the phase"
+        },
+        "agentPipeline.models.test": {
+          "type": "string",
+          "default": "claude-4.5-sonnet",
+          "description": "AI model to use for the Tester agent",
+          "enum": [
+            "claude-4.6-opus",
+            "claude-4.5-sonnet",
+            "composer-1.5",
+            "gemini-3-pro",
+            "gemini-3-flash",
+            "gpt-5.3-codex",
+            "gpt-5.2",
+            "grok-code",
+            "claude-3.5-sonnet",
+            "claude-3-opus",
+            "claude-3-haiku",
+            "gpt-4o",
+            "gpt-4o-mini",
+            "gpt-4-turbo",
+            "gpt-4",
+            "gemini-1.5-pro",
+            "gemini-1.5-flash",
+            "deepseek-v3",
+            "deepseek-r1",
+            "o1-mini",
+            "o1-preview"
+          ],
+          "enumDescriptions": [
+            "Claude 4.6 Opus - Anthropic's most capable (200k/1M context)",
+            "Claude 4.5 Sonnet - Fast & capable (200k/1M context)",
+            "Composer 1.5 - Cursor's built-in model (200k context)",
+            "Gemini 3 Pro - Google's most capable (200k/1M context)",
+            "Gemini 3 Flash - Fast Google model (200k/1M context)",
+            "GPT-5.3 Codex - OpenAI coding model (272k context)",
+            "GPT-5.2 - OpenAI flagship (272k context)",
+            "Grok Code - xAI coding model (256k context)",
+            "Claude 3.5 Sonnet - Previous gen (BYOK)",
+            "Claude 3 Opus - Previous gen (BYOK)",
+            "Claude 3 Haiku - Previous gen (BYOK)",
+            "GPT-4o - Previous gen (BYOK)",
+            "GPT-4o Mini - Previous gen (BYOK)",
+            "GPT-4 Turbo - Previous gen (BYOK)",
+            "GPT-4 - Previous gen (BYOK)",
+            "Gemini 1.5 Pro - Previous gen (BYOK)",
+            "Gemini 1.5 Flash - Previous gen (BYOK)",
+            "DeepSeek V3 - Open-source (BYOK)",
+            "DeepSeek R1 - Open-source reasoning (BYOK)",
+            "o1-mini - OpenAI reasoning mini (BYOK)",
+            "o1-preview - OpenAI reasoning (BYOK)"
+          ]
+        }
+      }
+    },
+    "commands": [
+      {
+        "command": "agentPipeline.start",
+        "title": "Agent Pipeline: Start Pipeline"
+      },
+      {
+        "command": "agentPipeline.approve",
+        "title": "Agent Pipeline: Approve & Continue"
+      },
+      {
+        "command": "agentPipeline.reject",
+        "title": "Agent Pipeline: Reject & Retry"
+      },
+      {
+        "command": "agentPipeline.reset",
+        "title": "Agent Pipeline: Reset Pipeline"
+      },
+      {
+        "command": "agentPipeline.copyPrompt",
+        "title": "Agent Pipeline: Copy Current Prompt"
+      },
+      {
+        "command": "agentPipeline.completePhase",
+        "title": "Agent Pipeline: Complete Current Phase"
+      },
+      {
+        "command": "agentPipeline.setupRules",
+        "title": "Agent Pipeline: Setup Rule Files"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run build:all",
+    "build": "webpack --mode production",
+    "build:mcp": "webpack --config webpack.mcp.config.js --mode production",
+    "build:all": "npm run build && npm run build:mcp",
+    "watch": "webpack --mode development --watch",
+    "compile": "webpack --mode development && webpack --config webpack.mcp.config.js --mode development",
+    "lint": "eslint src --ext ts",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "^20.11.0",
+    "@types/vscode": "^1.85.0",
+    "@vscode/vsce": "^3.2.0",
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.3.3",
+    "webpack": "^5.89.0",
+    "webpack-cli": "^5.1.4"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0"
+  }
+}

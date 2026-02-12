@@ -1,0 +1,35 @@
+---
+description: "Global rules for the Agent Pipeline - always active. Defines MCP tool usage patterns and general coding standards."
+alwaysApply: true
+---
+
+# Global Agent Pipeline Rules
+
+## MCP Tool Usage
+
+This project uses the **Agent Pipeline** MCP server. The following tools are available:
+
+- `pipeline_get_task` - Get the current task description and pipeline status
+- `pipeline_get_outputs` - Get outputs from previous agents (optional: filter by agent_name)
+- `pipeline_save_output` - Save your output when you complete your work (required: agent_name, output)
+- `pipeline_get_context` - Get project file structure and tech stack
+- `pipeline_get_status` - Get full pipeline status with history
+
+## Workflow
+
+When working as part of the agent pipeline:
+
+1. **First**, call `pipeline_get_task` to understand the current task
+2. **Then**, call `pipeline_get_outputs` to see what previous agents have produced
+3. **Do your work** according to your agent role
+4. **Finally**, call `pipeline_save_output` with your agent name and output
+
+## Code Standards
+
+- Write clean, readable, well-documented code
+- Follow the existing project conventions
+- Handle errors gracefully
+- Consider edge cases
+- Write in the language/framework the project uses
+- Keep functions small and focused
+- Use meaningful variable and function names

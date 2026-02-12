@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "agent-pipeline": {
+      "command": "node",
+      "args": [
+        "/Users/cemkurtulus/.cursor/extensions/agent-ck.agent-pipeline-0.4.0/dist/mcp/server.js"
+      ],
+      "env": {
+        "AGENT_PIPELINE_WORKSPACE": "/Users/cemkurtulus/Documents/agent_ck/extension"
+      }
+    }
+  }
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; style-src {{cspSource}} 'nonce-{{nonce}}'; script-src 'nonce-{{nonce}}';">
+  <link rel="stylesheet" href="{{styleUri}}">
+  <title>Agent Pipeline</title>
+</head>
+<body>
+  <div id="app">
+    <!-- Pipeline Steps -->
+    <div class="pipeline-header">
+      <h2>Agent Pipeline</h2>
+    </div>
+
+    <div class="pipeline-steps" id="pipeline-steps">
+      <div class="step" data-phase="planning" id="step-planner">
+        <div class="step-indicator"></div>
+        <div class="step-info">
+          <span class="step-name">Planner</span>
+          <span class="step-status" id="status-planner"></span>
+        </div>
+      </div>
+      <div class="step-connector"></div>
+      <div class="step" data-phase="implementing" id="step-implementer">
+        <div class="step-indicator"></div>
+        <div class="step-info">
+          <span class="step-name">Implementer</span>
+          <span class="step-status" id="status-implementer"></span>
+        </div>
+      </div>
+      <div class="step-connector"></div>
+      <div class="step" data-phase="reviewing" id="step-reviewer">
+        <div class="step-indicator"></div>
+        <div class="step-info">
+          <span class="step-name">Reviewer</span>
+          <span class="step-status" id="status-reviewer"></span>
+        </div>
+      </div>
+      <div class="step-connector"></div>
+      <div class="step" data-phase="testing" id="step-test">
+        <div class="step-indicator"></div>
+        <div class="step-info">
+          <span class="step-name">Tester</span>
+          <span class="step-status" id="status-test"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Task Description -->
+    <div class="section" id="task-section" style="display:none;">
+      <div class="section-header">Task</div>
+      <div class="task-description" id="task-description"></div>
+    </div>
+
+    <!-- Current Phase Info -->
+    <div class="section" id="phase-section" style="display:none;">
+      <div class="section-header">Current Phase</div>
+      <div class="phase-info" id="phase-info"></div>
+    </div>
+
+    <!-- Agent Output Preview -->
+    <div class="section" id="output-section" style="display:none;">
+      <div class="section-header clickable" id="output-toggle">
+        Agent Outputs
+        <span class="toggle-icon">&#9660;</span>
+      </div>
+      <div class="output-list" id="output-list"></div>
+    </div>
+
+    <!-- Action Buttons -->
+    <div class="actions" id="actions">
+      <button class="btn btn-primary" id="btn-start">Start Pipeline</button>
+      <button class="btn btn-secondary" id="btn-copy" style="display:none;">Copy Prompt</button>
+      <button class="btn btn-primary" id="btn-complete" style="display:none;">Complete Phase</button>
+      <button class="btn btn-success" id="btn-approve" style="display:none;">Approve & Continue</button>
+      <button class="btn btn-danger" id="btn-reject" style="display:none;">Reject & Retry</button>
+      <button class="btn btn-ghost" id="btn-reset" style="display:none;">Reset</button>
+    </div>
+  </div>
+
+  <script nonce="{{nonce}}" src="{{scriptUri}}"></script>
+</body>
+</html>
