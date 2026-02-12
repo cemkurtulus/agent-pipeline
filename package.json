@@ -3,12 +3,12 @@
   "displayName": "Agent Pipeline",
   "description": "Multi-agent pipeline orchestrator for Cursor IDE - automates planning, implementation, review, and testing workflows",
   "version": "0.0.1",
-  "publisher": "cmkurtulus",
+  "publisher": "cemkurtulus",
   "icon": "resources/icon.png",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/agent-ck/agent-pipeline"
+    "url": "https://github.com/cemkurtulus/agent-pipeline"
   },
   "keywords": [
     "cursor",

@@ -1,9 +1,10 @@
 # Agent Pipeline
 
-[![VS Marketplace](https://img.shields.io/visual-studio-marketplace/v/cmkurtulus.agent-pipeline?label=VS%20Marketplace&color=blue)](https://marketplace.visualstudio.com/items?itemName=cmkurtulus.agent-pipeline)
-[![Installs](https://img.shields.io/visual-studio-marketplace/i/cmkurtulus.agent-pipeline)](https://marketplace.visualstudio.com/items?itemName=cmkurtulus.agent-pipeline)
+[![VS Marketplace](https://img.shields.io/visual-studio-marketplace/v/cemkurtulus.agent-pipeline?label=VS%20Marketplace&color=blue)](https://marketplace.visualstudio.com/items?itemName=cemkurtulus.agent-pipeline)
+[![Open VSX](https://img.shields.io/open-vsx/v/cemkurtulus/agent-pipeline?label=Open%20VSX&color=purple)](https://open-vsx.org/extension/cemkurtulus/agent-pipeline)
+[![Installs](https://img.shields.io/visual-studio-marketplace/i/cemkurtulus.agent-pipeline)](https://marketplace.visualstudio.com/items?itemName=cemkurtulus.agent-pipeline)
 
-**[Install from VS Marketplace](https://marketplace.visualstudio.com/items?itemName=cmkurtulus.agent-pipeline)**
+**[Install from VS Marketplace](https://marketplace.visualstudio.com/items?itemName=cemkurtulus.agent-pipeline)** | **[Install from Open VSX (Cursor)](https://open-vsx.org/extension/cemkurtulus/agent-pipeline)**
 
 Multi-agent pipeline orchestrator for Cursor IDE. Automates the software development workflow through 4 specialized AI agents: **Planner**, **Implementer**, **Reviewer**, and **Tester**.
 
